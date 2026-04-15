@@ -6,7 +6,7 @@
   <title>Cécile Vincent — Physics Researcher</title>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
     :root {
       --bg: #ffffff;
       --bg-secondary: #f7f7f5;
@@ -14,14 +14,14 @@
       --text-secondary: #555;
       --text-tertiary: #999;
       --border: rgba(0,0,0,0.12);
+      --green-dark: #085041;
       --green: #0F6E56;
-      --green-light: #E1F5EE;
+      --green-mid: #1D9E75;
+      --green-bright: #5DCAA5;
       --green-border: #9FE1CB;
-      --green-mid: #5DCAA5;
-      --radius-md: 8px;
-      --radius-lg: 12px;
+      --green-light: #E1F5EE;
     }
-
+ 
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #1a1a1a;
@@ -30,109 +30,128 @@
         --text-secondary: #aaa;
         --text-tertiary: #666;
         --border: rgba(255,255,255,0.1);
+        --green-dark: #9FE1CB;
         --green: #5DCAA5;
-        --green-light: #04342C;
+        --green-mid: #5DCAA5;
+        --green-bright: #1D9E75;
         --green-border: #085041;
-        --green-mid: #1D9E75;
+        --green-light: #04342C;
       }
     }
-
+ 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
       color: var(--text);
       background: var(--bg);
-      font-size: 16px;
       line-height: 1.7;
     }
-
+ 
     nav {
       display: flex; align-items: center; justify-content: space-between;
       padding: 1rem 2rem; border-bottom: 0.5px solid var(--border);
-      position: sticky; top: 0; background: var(--bg); z-index: 10;
+      background: var(--bg); position: sticky; top: 0; z-index: 10;
     }
-    .nav-name { font-size: 15px; font-weight: 500; }
+    .nav-name { font-size: 15px; font-weight: 500; color: var(--green); }
     .nav-links { display: flex; gap: 1.5rem; }
     .nav-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; }
-    .nav-links a:hover { color: var(--text); }
-
-    section { padding: 3rem 2rem; max-width: 820px; margin: 0 auto; }
-
-    .hero { padding-top: 3rem; padding-bottom: 2.5rem; display: flex; gap: 2rem; align-items: flex-start; }
+    .nav-links a:hover { color: var(--green); }
+ 
+    .hero-band { background: var(--green-light); padding: 3rem 2rem 2.5rem; }
+    .hero-inner { max-width: 820px; margin: 0 auto; display: flex; gap: 2rem; align-items: flex-start; }
     .avatar {
-      width: 80px; height: 80px; border-radius: 50%; flex-shrink: 0;
-      background: var(--green-light); display: flex; align-items: center; justify-content: center;
-      font-size: 22px; font-weight: 500; color: var(--green); border: 0.5px solid var(--green-border);
+      width: 88px; height: 88px; border-radius: 50%; flex-shrink: 0;
+      background: var(--green-bright); display: flex; align-items: center; justify-content: center;
+      font-size: 24px; font-weight: 500; color: #fff; border: 3px solid #fff;
     }
-    .hero-text h1 { font-size: 26px; font-weight: 500; margin-bottom: 4px; }
-    .hero-text .role { font-size: 15px; color: var(--text-secondary); margin-bottom: 12px; }
-    .hero-text p { font-size: 14px; line-height: 1.7; color: var(--text-secondary); max-width: 560px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .hero-text h1 { font-size: 28px; font-weight: 500; margin-bottom: 4px; color: var(--green-dark); }
+    .hero-text .role { font-size: 14px; color: var(--green); font-weight: 500; margin-bottom: 12px; }
+    .hero-text p { font-size: 14px; line-height: 1.75; color: var(--green-dark); max-width: 560px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
     .tag {
-      font-size: 12px; padding: 3px 10px; border-radius: 20px;
-      background: var(--green-light); color: var(--green); border: 0.5px solid var(--green-border);
+      font-size: 12px; padding: 4px 12px; border-radius: 20px;
+      background: #fff; color: var(--green); border: 1px solid var(--green-border); font-weight: 500;
     }
-
-    .section-title {
-      font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--text-tertiary); margin-bottom: 1.5rem; padding-bottom: 0.5rem;
-      border-bottom: 0.5px solid var(--border);
-    }
+ 
+    section { padding: 2.5rem 2rem; max-width: 820px; margin: 0 auto; }
+ 
+    .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; }
+    .section-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green-bright); flex-shrink: 0; }
+    .section-title { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); }
+ 
     hr.divider { border: none; border-top: 0.5px solid var(--border); margin: 0 2rem; }
-
+ 
     .pub-card {
-      background: var(--bg);
-      border: 0.5px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem; margin-bottom: 1rem;
+      border: 1px solid var(--green-border); border-radius: 12px;
+      padding: 1.25rem; margin-bottom: 1rem; background: var(--bg);
     }
-    .pub-card.ongoing { background: var(--bg-secondary); border-style: dashed; }
+    .pub-card.ongoing { background: var(--green-light); border-style: dashed; }
     .pub-card h3 { font-size: 14px; font-weight: 500; margin-bottom: 6px; line-height: 1.5; }
-    .pub-card .authors { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
+    .pub-card .authors { font-size: 13px; color: var(--text-secondary); margin-bottom: 4px; }
     .pub-card .venue { font-size: 12px; color: var(--green); }
     .pub-link {
       display: inline-block; margin-top: 10px; font-size: 12px;
-      color: var(--green); text-decoration: none; border: 0.5px solid var(--green-border);
-      padding: 3px 10px; border-radius: 20px;
+      color: #fff; background: var(--green-mid); text-decoration: none;
+      padding: 5px 14px; border-radius: 20px; font-weight: 500;
     }
-    .pub-link:hover { background: var(--green-light); }
-
-    .exp-item { margin-bottom: 1.75rem; }
-    .exp-item .meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; gap: 1rem; }
+    .pub-link:hover { background: var(--green); }
+ 
+    .timeline { border-left: 2px solid var(--green-border); padding-left: 1.5rem; margin-left: 6px; }
+    .exp-item { margin-bottom: 1.75rem; position: relative; }
+    .exp-item::before {
+      content: ''; position: absolute; left: -1.92rem; top: 5px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--green-bright); border: 2px solid var(--bg);
+      outline: 1px solid var(--green-border);
+    }
+    .exp-item .meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; gap: 1rem; }
     .exp-item h3 { font-size: 14px; font-weight: 500; }
-    .exp-item .date { font-size: 12px; color: var(--text-tertiary); white-space: nowrap; }
+    .exp-item .date {
+      font-size: 11px; color: #fff; background: var(--green-bright);
+      padding: 2px 8px; border-radius: 20px; white-space: nowrap; font-weight: 500;
+    }
     .exp-item .org { font-size: 13px; color: var(--green); margin-bottom: 6px; }
-    .exp-item .subtitle { font-size: 13px; color: var(--text-secondary); margin-bottom: 4px; font-style: italic; }
+    .exp-item .subtitle { font-size: 13px; color: var(--text-secondary); font-style: italic; margin-bottom: 4px; }
     .exp-item ul { padding-left: 1rem; }
     .exp-item ul li { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
-
-    .teaching-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
-    .teaching-card { background: var(--bg-secondary); border-radius: var(--radius-md); padding: 0.875rem; }
-    .teaching-card .level { font-size: 11px; color: var(--text-tertiary); margin-bottom: 4px; }
-    .teaching-card h4 { font-size: 13px; font-weight: 500; line-height: 1.4; }
-
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .skill-group h4 { font-size: 13px; font-weight: 500; margin-bottom: 6px; }
-    .skill-group p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
-
-    .contact-block { background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 1.5rem; }
-    .contact-block > p { font-size: 14px; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.7; }
-    .contact-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-    .contact-row span { font-size: 13px; }
-    .contact-row a { font-size: 13px; color: var(--green); text-decoration: none; }
-    .contact-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-mid); flex-shrink: 0; }
-
-    footer { text-align: center; font-size: 12px; color: var(--text-tertiary); padding: 2rem; }
-
+ 
+    .teaching-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+    .teaching-card {
+      background: var(--green-light); border-radius: 10px; padding: 0.875rem;
+      border-left: 3px solid var(--green-bright);
+    }
+    .teaching-card .level { font-size: 11px; color: var(--green); margin-bottom: 4px; font-weight: 500; }
+    .teaching-card h4 { font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--green-dark); }
+ 
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1rem; }
+    .skill-card {
+      background: var(--bg-secondary); border-radius: 10px; padding: 1rem;
+      border-top: 2px solid var(--green-border);
+    }
+    .skill-card h4 { font-size: 13px; font-weight: 500; margin-bottom: 5px; color: var(--green); }
+    .skill-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+ 
+    .contact-band { background: var(--green-light); padding: 2.5rem 2rem; }
+    .contact-inner { max-width: 820px; margin: 0 auto; }
+    .contact-inner > p { font-size: 14px; color: var(--green-dark); margin-bottom: 1.25rem; line-height: 1.7; }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+    .contact-card { background: var(--bg); border-radius: 10px; padding: 0.875rem 1rem; border: 1px solid var(--green-border); }
+    .contact-card .clabel { font-size: 11px; color: var(--green); font-weight: 500; margin-bottom: 3px; }
+    .contact-card a { font-size: 13px; color: var(--green-dark); text-decoration: none; }
+    .contact-card a:hover { color: var(--green-mid); }
+    .contact-card span { font-size: 13px; color: var(--green-dark); }
+ 
+    footer { text-align: center; font-size: 12px; color: var(--text-tertiary); padding: 1.5rem; }
+ 
     @media (max-width: 600px) {
-      .hero { flex-direction: column; gap: 1rem; }
+      .hero-inner { flex-direction: column; gap: 1rem; }
       .nav-links { gap: 1rem; }
       .skills-grid { grid-template-columns: 1fr; }
-      .exp-item .meta { flex-direction: column; gap: 2px; }
+      .exp-item .meta { flex-direction: column; gap: 4px; }
     }
   </style>
 </head>
 <body>
-
+ 
 <nav>
   <span class="nav-name">Cécile Vincent</span>
   <div class="nav-links">
@@ -142,217 +161,187 @@
     <a href="#contact">Contact</a>
   </div>
 </nav>
-
-<section class="hero">
-  <div class="avatar">CV</div>
-  <div class="hero-text">
-    <h1>Cécile Vincent</h1>
-    <div class="role">Research Engineer · CEA Saclay</div>
-    <p>PhD in physics, I currently work at the Laboratory for Studies and Research in Immunoanalysis (LERI) at CEA Saclay, developing in vitro diagnostic methods for toxin intoxication in microfluidic systems. My research lies at the interface of physics, biology, and chemistry.</p>
-    <div class="tags">
-      <span class="tag">Microfluidics</span>
-      <span class="tag">Biophysics</span>
-      <span class="tag">Soft matter</span>
-      <span class="tag">Synthetic biology</span>
-      <span class="tag">Molecular biology</span>
-      <span class="tag">Immunology</span>
+ 
+<div class="hero-band">
+  <div class="hero-inner">
+    <div class="avatar">CV</div>
+    <div class="hero-text">
+      <h1>Cécile Vincent</h1>
+      <div class="role">Research Engineer · CEA Saclay</div>
+      <p>PhD in physics, I currently work at the Laboratory for Studies and Research in Immunoanalysis (LERI) at CEA Saclay, developing in vitro diagnostic methods for toxin intoxication in microfluidic systems. My research lies at the interface of physics, biology, and chemistry.</p>
+      <div class="tags">
+        <span class="tag">Microfluidics</span>
+        <span class="tag">Biophysics</span>
+        <span class="tag">Soft matter</span>
+        <span class="tag">Synthetic biology</span>
+        <span class="tag">Molecular biology</span>
+        <span class="tag">Immunology</span>
+      </div>
     </div>
   </div>
-</section>
-
-<hr class="divider">
-
+</div>
+ 
 <section id="research">
-  <div class="section-title">Publications &amp; Research</div>
-
+  <div class="section-header"><span class="section-dot"></span><span class="section-title">Publications &amp; Research</span></div>
+ 
   <div class="pub-card">
     <h3>Probing and modeling cell-cell communication in 2D biomimetic tissues</h3>
     <div class="authors">Cécile Vincent · Élie Wandersman · Léa-Laetitia Pontani</div>
     <div class="venue">Jean Perrin Laboratory, Sorbonne Université</div>
     <a class="pub-link" href="https://www.researchgate.net/publication/400678196_Probing_and_modeling_cell-cell_communication_in_2D_biomimetic_tissues" target="_blank">View on ResearchGate</a>
   </div>
-
+ 
   <div class="pub-card ongoing">
     <h3>In vitro diagnosis of toxin intoxication in microfluidic systems</h3>
     <div class="authors">Cécile Vincent et al.</div>
     <div class="venue">CEA Saclay — LERI · Ongoing project (2025–present)</div>
   </div>
 </section>
-
+ 
 <hr class="divider">
-
+ 
 <section id="experience">
-  <div class="section-title">Experience</div>
-
-  <div class="exp-item">
-    <div class="meta">
-      <h3>Research Engineer</h3>
-      <span class="date">Nov 2025 – present</span>
+  <div class="section-header"><span class="section-dot"></span><span class="section-title">Experience</span></div>
+  <div class="timeline">
+    <div class="exp-item">
+      <div class="meta"><h3>Research Engineer</h3><span class="date">Nov 2025 – present</span></div>
+      <div class="org">CEA Saclay · LERI</div>
+      <ul><li>Development of in vitro diagnostic methods for toxin intoxication in microfluidic systems</li></ul>
     </div>
-    <div class="org">CEA Saclay · LERI</div>
-    <ul><li>Development of in vitro diagnostic methods for toxin intoxication in microfluidic systems</li></ul>
-  </div>
-
-  <div class="exp-item">
-    <div class="meta">
-      <h3>PhD in Physics</h3>
-      <span class="date">Oct 2022 – Oct 2025</span>
+    <div class="exp-item">
+      <div class="meta"><h3>PhD in Physics</h3><span class="date">Oct 2022 – Oct 2025</span></div>
+      <div class="org">Jean Perrin Laboratory · Sorbonne Université</div>
+      <ul>
+        <li>Biomimetic approach to cell-cell communication</li>
+        <li>Emulsions, microfluidics, rheology, confocal microscopy</li>
+        <li>Molecular biology: PCR, protein expression, bacterial cultures</li>
+        <li>Data analysis: Python, Matlab, ImageJ, Ilastik</li>
+      </ul>
     </div>
-    <div class="org">Jean Perrin Laboratory · Sorbonne Université</div>
-    <ul>
-      <li>Biomimetic approach to cell-cell communication</li>
-      <li>Emulsions, microfluidics, rheology, confocal microscopy</li>
-      <li>Molecular biology: PCR, protein expression, bacterial cultures</li>
-      <li>Data analysis: Python, Matlab, ImageJ, Ilastik</li>
-    </ul>
-  </div>
-
-  <div class="exp-item">
-    <div class="meta">
-      <h3>Master's internship (M2)</h3>
-      <span class="date">Mar – Aug 2022</span>
+    <div class="exp-item">
+      <div class="meta"><h3>Master's internship (M2)</h3><span class="date">Mar – Aug 2022</span></div>
+      <div class="org">SVI Laboratory · Saint-Gobain Recherche, Aubervilliers</div>
+      <ul><li>Drying of a liquid film: influence of defects on the final deposit</li></ul>
     </div>
-    <div class="org">SVI Laboratory · Saint-Gobain Recherche, Aubervilliers</div>
-    <ul><li>Drying of a liquid film: influence of defects on the final deposit</li></ul>
-  </div>
-
-  <div class="exp-item">
-    <div class="meta">
-      <h3>Master's internship (M1)</h3>
-      <span class="date">May – Jul 2021</span>
+    <div class="exp-item">
+      <div class="meta"><h3>Master's internship (M1)</h3><span class="date">May – Jul 2021</span></div>
+      <div class="org">Institut Curie · Laboratory of Genetics and Developmental Biology</div>
+      <ul><li>Collective cell migration during Drosophila development</li></ul>
     </div>
-    <div class="org">Institut Curie · Laboratory of Genetics and Developmental Biology</div>
-    <ul><li>Collective cell migration during Drosophila development</li></ul>
   </div>
-
-  <div class="section-title" style="margin-top: 2rem;">Education</div>
-
-  <div class="exp-item">
-    <div class="meta">
-      <h3>PhD in Physics (ED 564 — Physics in Île-de-France)</h3>
-      <span class="date">2022–2025</span>
+ 
+  <div class="section-header" style="margin-top:2rem"><span class="section-dot"></span><span class="section-title">Education</span></div>
+  <div class="timeline">
+    <div class="exp-item">
+      <div class="meta"><h3>PhD in Physics (ED 564 — Physics in Île-de-France)</h3><span class="date">2022–2025</span></div>
+      <div class="org">Sorbonne Université · Jean Perrin Laboratory</div>
+      <div class="subtitle">Thesis: Biomimetic approach to cell-cell communication · Supervisor: Élie Wandersman</div>
     </div>
-    <div class="org">Sorbonne Université · Jean Perrin Laboratory</div>
-    <div class="subtitle">Thesis: Biomimetic approach to cell-cell communication · Supervisor: Élie Wandersman</div>
-  </div>
-
-  <div class="exp-item">
-    <div class="meta">
-      <h3>Master's degree — Complex fluids and divided media</h3>
-      <span class="date">2021–2022</span>
+    <div class="exp-item">
+      <div class="meta"><h3>Master's degree — Complex fluids and divided media</h3><span class="date">2021–2022</span></div>
+      <div class="org">Université Paris Cité · With distinction</div>
     </div>
-    <div class="org">Université Paris Cité · With distinction</div>
-  </div>
-
-  <div class="exp-item">
-    <div class="meta">
-      <h3>Master's degree — Fundamental physics</h3>
-      <span class="date">2020–2021</span>
+    <div class="exp-item">
+      <div class="meta"><h3>Master's degree — Fundamental physics</h3><span class="date">2020–2021</span></div>
+      <div class="org">Université Paris Cité</div>
     </div>
-    <div class="org">Université Paris Cité</div>
-  </div>
-
-  <div class="exp-item">
-    <div class="meta">
-      <h3>Bachelor's degree in Physics</h3>
-      <span class="date">2019–2020</span>
+    <div class="exp-item">
+      <div class="meta"><h3>Bachelor's degree in Physics</h3><span class="date">2019–2020</span></div>
+      <div class="org">Université Paris Cité</div>
     </div>
-    <div class="org">Université Paris Cité</div>
   </div>
-
-  <div class="section-title" style="margin-top: 2rem;">Scientific communications</div>
-
-  <div class="exp-item">
-    <div class="meta"><h3>Oral contribution</h3><span class="date">Dec 2023</span></div>
-    <div class="org">GDR Fluids and Complexity III · Nice</div>
-  </div>
-  <div class="exp-item">
-    <div class="meta"><h3>Posters</h3><span class="date">2023, 2024</span></div>
-    <div class="org">GDR AQV Days · Vogüé (2024) &amp; Île d'Oléron (2023)</div>
+ 
+  <div class="section-header" style="margin-top:2rem"><span class="section-dot"></span><span class="section-title">Scientific communications</span></div>
+  <div class="timeline">
+    <div class="exp-item">
+      <div class="meta"><h3>Oral contribution</h3><span class="date">Dec 2023</span></div>
+      <div class="org">GDR Fluids and Complexity III · Nice</div>
+    </div>
+    <div class="exp-item">
+      <div class="meta"><h3>Posters</h3><span class="date">2023, 2024</span></div>
+      <div class="org">GDR AQV Days · Vogüé (2024) &amp; Île d'Oléron (2023)</div>
+    </div>
   </div>
 </section>
-
+ 
 <hr class="divider">
-
+ 
 <section id="teaching">
-  <div class="section-title">Teaching</div>
+  <div class="section-header"><span class="section-dot"></span><span class="section-title">Teaching</span></div>
   <div class="teaching-grid">
     <div class="teaching-card">
       <div class="level">Master BPTI · Univ. Paris Saclay · Feb 2026</div>
-      <h4>Microfluidics (lab)</h4>
+      <h4>Microfluidics (TP)</h4>
     </div>
     <div class="teaching-card">
       <div class="level">Master NRBC · Mar 2026</div>
-      <h4>Microfluidics (lab)</h4>
+      <h4>Microfluidics (TP)</h4>
     </div>
     <div class="teaching-card">
       <div class="level">2nd year BSc Physics · SU · 2024 &amp; 2025</div>
-      <h4>Experimental physics (lab)</h4>
+      <h4>Experimental physics (TP)</h4>
     </div>
     <div class="teaching-card">
       <div class="level">MSc FCMD · SU · 2023–2025</div>
-      <h4>Granular media (tutorials &amp; lab)</h4>
+      <h4>Granular media (TD &amp; TP)</h4>
     </div>
     <div class="teaching-card">
       <div class="level">1st year medicine · SU · 2024</div>
-      <h4>Biophysics (tutorials)</h4>
+      <h4>Biophysics (TD)</h4>
     </div>
     <div class="teaching-card">
       <div class="level">High schools · Nov–Dec 2022</div>
       <h4>Déclics association — science outreach</h4>
     </div>
   </div>
-
-  <div class="section-title" style="margin-top: 2rem;">Technical skills</div>
+ 
+  <div class="section-header" style="margin-top:2rem"><span class="section-dot"></span><span class="section-title">Technical skills</span></div>
   <div class="skills-grid">
-    <div class="skill-group">
+    <div class="skill-card">
       <h4>Microscopy</h4>
       <p>Optical, spinning disk confocal, epifluorescence</p>
     </div>
-    <div class="skill-group">
+    <div class="skill-card">
       <h4>Molecular biology</h4>
       <p>PCR, Miniprep, bacterial cultures, protein expression</p>
     </div>
-    <div class="skill-group">
+    <div class="skill-card">
       <h4>Data analysis</h4>
       <p>Python, Matlab, ImageJ, Mathematica, Ilastik</p>
     </div>
-    <div class="skill-group">
+    <div class="skill-card">
       <h4>Languages</h4>
       <p>French (native) · English C1 · German B1</p>
     </div>
   </div>
 </section>
-
-<hr class="divider">
-
-<section id="contact">
-  <div class="section-title">Contact</div>
-  <div class="contact-block">
+ 
+<div class="contact-band" id="contact">
+  <div class="contact-inner">
+    <div class="section-header"><span class="section-dot"></span><span class="section-title">Contact</span></div>
     <p>Feel free to reach out for scientific collaborations, questions about my research, or professional opportunities.</p>
-    <div class="contact-row">
-      <span class="contact-dot"></span>
-      <span>Email:</span>
-      <a href="mailto:cess.vincent@yahoo.fr">cess.vincent@yahoo.fr</a>
-    </div>
-    <div class="contact-row">
-      <span class="contact-dot"></span>
-      <span>Phone:</span>
-      <span>+33 6 45 98 21 51</span>
-    </div>
-    <div class="contact-row">
-      <span class="contact-dot"></span>
-      <span>Institution:</span>
-      <span>CEA Saclay · LERI</span>
-    </div>
-    <div class="contact-row">
-      <span class="contact-dot"></span>
-      <a href="https://www.researchgate.net/publication/400678196" target="_blank">ResearchGate</a>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="clabel">Email</div>
+        <a href="mailto:cess.vincent@yahoo.fr">cess.vincent@yahoo.fr</a>
+      </div>
+      <div class="contact-card">
+        <div class="clabel">Phone</div>
+        <span>+33 6 45 98 21 51</span>
+      </div>
+      <div class="contact-card">
+        <div class="clabel">Institution</div>
+        <span>CEA Saclay · LERI</span>
+      </div>
+      <div class="contact-card">
+        <div class="clabel">ResearchGate</div>
+        <a href="https://www.researchgate.net/publication/400678196" target="_blank">View profile</a>
+      </div>
     </div>
   </div>
-</section>
-
+</div>
+ 
 <footer>© 2026 Cécile Vincent · CEA Saclay</footer>
-
+ 
 </body>
 </html>
